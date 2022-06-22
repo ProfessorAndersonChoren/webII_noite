@@ -1,6 +1,9 @@
 <?php
+
 namespace APP\Model;
-class Client{
+
+class Client
+{
     private string $cpf;
     private string $name;
     private string $email;

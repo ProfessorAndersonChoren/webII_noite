@@ -1,7 +1,9 @@
 <?php
+
 namespace APP\Model;
 
-class Employee{
+class Employee
+{
     private string $email;
     private string $password;
     private string $name;
