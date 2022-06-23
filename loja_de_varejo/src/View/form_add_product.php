@@ -13,7 +13,7 @@
     <form action="../controller/Product.php" method="POST">
         <fieldset class="p-4 m-5 border border-blue-400">
             <legend>Dados do produto</legend>
-            <section class="columns-3">
+            <section class="columns-2">
                 <article>
                     <label for="name">Nome do produto</label>
                     <input type="text" id="name" name="name" class="border border-blue-400" required minlength="5">
@@ -22,9 +22,19 @@
                     <label for="price">Preço</label>
                     <input type="text" id="price" name="price" class="border border-blue-400" required min="1" max="1000">
                 </article>
+            </section>
+            <section class="mt-4 columns-2">
                 <article>
                     <label for="quantity">Quantidade em estoque</label>
                     <input type="number" id="quantity" name="quantity" class="border border-blue-400" required min="1" max="1000">
+                </article>
+                <article>
+                    <label for="provider">Fornecedor</label>
+                    <select name="provider" id="provider">
+                        <option value="1">Fornecedor 1</option>
+                        <option value="2">Fornecedor 2</option>
+                        <option value="3">Fornecedor 4</option>
+                    </select>
                 </article>
             </section>
             <article class="flex justify-center mt-4">
