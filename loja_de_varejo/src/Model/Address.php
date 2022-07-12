@@ -6,7 +6,7 @@ class Address
 {
     private string $publicPlace;
     private string $numberOfStreet;
-    private string $complement;
+    private ?string $complement;
     private string $neighborhood;
     private string $city;
     private string $zipCode;
@@ -14,7 +14,7 @@ class Address
     public function __construct(
         string $publicPlace,
         string $numberOfStreet,
-        string $complement,
+        ?string $complement,
         string $neighborhood,
         string $city,
         string $zipCode
