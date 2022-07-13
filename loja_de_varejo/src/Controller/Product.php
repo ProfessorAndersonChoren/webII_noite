@@ -61,6 +61,7 @@ if ($error) {
             name:"Fornecedor Padrão"
         )
     );
+    // TODO Cadastrar no banco de dados
     Redirect::redirect(
         message: "O produto $productName foi cadastrado com sucesso!!!"
     );
