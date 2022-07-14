@@ -17,8 +17,7 @@ class Product
         string $name,
         int $quantity,
         Provider $provider
-    )
-    {
+    ) {
         self::calculateFinalPrice(
             $cost,
             $tax,
@@ -43,5 +42,10 @@ class Product
     public function calculateMarkup(float $costOfOperation): float
     {
         return $this->price / $costOfOperation;
+    }
+
+    public function __get($attribute)
+    {
+        return $this->$attribute;
     }
 }

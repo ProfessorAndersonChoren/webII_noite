@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `retail_store`.`Address` (
   `street_name` VARCHAR(40) NOT NULL,
   `number_of_street` SMALLINT NOT NULL,
   `complement` VARCHAR(10) NULL,
-  `neighborhood,` VARCHAR(50) NOT NULL,
+  `neighborhood` VARCHAR(50) NOT NULL,
   `city` VARCHAR(30) NOT NULL,
   `zipcode` CHAR(8) NOT NULL,
   PRIMARY KEY (`address_code`))

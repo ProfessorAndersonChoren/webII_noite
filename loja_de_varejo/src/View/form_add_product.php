@@ -33,7 +33,7 @@
                     <select name="provider" id="provider">
                         <option value="1">Fornecedor 1</option>
                         <option value="2">Fornecedor 2</option>
-                        <option value="3">Fornecedor 4</option>
+                        <option value="3">Fornecedor 3</option>
                     </select>
                 </article>
             </section>
