@@ -20,7 +20,7 @@
             </li>
         </ul>
     </nav>
-    <form action="../controller/Product.php" method="POST">
+    <form action="../controller/Product.php?operation=insert" method="POST">
         <fieldset class="p-4 m-5 border border-blue-400">
             <legend>Dados do produto</legend>
             <section class="columns-2">
