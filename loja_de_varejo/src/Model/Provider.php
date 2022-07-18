@@ -4,6 +4,7 @@ namespace APP\Model;
 
 class Provider
 {
+    private int $id;
     private string $cnpj;
     private string $name;
     private ?string $phone;
@@ -14,11 +15,15 @@ class Provider
         string $name,
         ?string $phone = null,
         ?Address $address = null
-    )
-    {
+    ) {
         $this->cnpj = $cnpj;
         $this->name = $name;
         $this->phone = $phone;
         $this->address = $address;
+    }
+
+    public function __get($attribute)
+    {
+        return $this->$attribute;
     }
 }

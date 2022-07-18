@@ -10,6 +10,16 @@
 </head>
 
 <body>
+    <nav class="bg-blue-400">
+        <ul>
+            <li class="inline">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="inline">
+                <a href="#">Novo produto</a>
+            </li>
+        </ul>
+    </nav>
     <form action="../controller/Product.php" method="POST">
         <fieldset class="p-4 m-5 border border-blue-400">
             <legend>Dados do produto</legend>
