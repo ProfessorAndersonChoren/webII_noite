@@ -18,6 +18,12 @@
             <li class="inline">
                 <a href="#">Novo produto</a>
             </li>
+            <li class="inline">
+                <a href="form_add_provider.php">Novo fornecedor</a>
+            </li>
+            <li class="inline">
+                <a href="../Controller/Product.php?operation=list">Listar produtos</a>
+            </li>
         </ul>
     </nav>
     <form action="../controller/Product.php?operation=insert" method="POST">

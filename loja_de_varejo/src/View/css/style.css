@@ -566,6 +566,10 @@ video {
   margin: 0.5rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -597,6 +601,10 @@ video {
 
 .w-2\/4 {
   width: 50%;
+}
+
+.table-auto {
+  table-layout: auto;
 }
 
 .columns-2 {
