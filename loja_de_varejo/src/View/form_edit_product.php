@@ -26,24 +26,28 @@
             </li>
         </ul>
     </nav>
+    <?php
+    session_start();
+    $product = $_SESSION['list_of_products'][0];
+    ?>
     <form action="../controller/Product.php?operation=edit" method="POST">
-        <input type="hidden" name="code" value="1">
+        <input type="hidden" name="code" value="<?= $product['product_code'] ?>">
         <fieldset class="p-4 m-5 border border-blue-400">
             <legend>Dados do produto</legend>
             <section class="columns-2">
                 <article>
                     <label for="name">Nome do produto</label>
-                    <input type="text" id="name" name="name" class="border border-blue-400" required minlength="5">
+                    <input type="text" id="name" name="name" class="border border-blue-400" required minlength="5" value="<?= $product['product_name'] ?>">
                 </article>
                 <article>
-                    <label for="cost">Preço de custo</label>
-                    <input type="text" id="cost" name="cost" class="border border-blue-400" required min="1" max="1000">
+                    <label for="sale">Preço de venda</label>
+                    <input type="text" id="sale" name="sale" class="border border-blue-400" required min="1" max="1000" value="<?= $product['product_price'] ?>" disabled>
                 </article>
             </section>
             <section class="mt-4 columns-2">
                 <article>
                     <label for="quantity">Quantidade em estoque</label>
-                    <input type="number" id="quantity" name="quantity" class="border border-blue-400" required min="1" max="1000">
+                    <input type="number" id="quantity" name="quantity" class="border border-blue-400" required min="1" max="1000" value="<?= $product['product_quantity'] ?>">
                 </article>
                 <article>
                     <label for="provider">Fornecedor</label>

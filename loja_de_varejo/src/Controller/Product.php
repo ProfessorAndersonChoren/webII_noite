@@ -155,6 +155,23 @@ function removeProduct()
 
 function findProduct()
 {
+    if (empty($_GET['code'])) {
+        Redirect::redirect(message: 'O código do produto não foi informado!!!', type: 'error');
+    }
+    $code = $_GET['code'];
+    $dao = new ProductDAO();
+    try {
+        $result = $dao->findOne($code);
+    } catch (PDOException $e) {
+        Redirect::redirect("Lamento, houve um erro inesperado!!!", type: 'error');
+    }
+    if ($result) {
+        session_start();
+        $_SESSION['product_info'] = $result;
+        header("location:../View/form_edit_product.php");
+    } else {
+        Redirect::redirect(message: 'Lamento, não localizamos o produto em nossa base de dados', type: 'error');
+    }
 }
 
 function editProduct()
