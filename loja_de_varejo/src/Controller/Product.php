@@ -25,6 +25,12 @@ switch ($_GET['operation']) {
     case 'remove':
         removeProduct();
         break;
+    case 'find':
+        findProduct();
+        break;
+    case 'edit':
+        editProduct();
+        break;
     default:
         Redirect::redirect(message: 'A operação informada é inválida!!!', type: 'error');
 }
@@ -145,4 +151,12 @@ function removeProduct()
             Redirect::redirect("Lamento, houve um erro inesperado!!!", type: 'error');
         }
     }
+}
+
+function findProduct()
+{
+}
+
+function editProduct()
+{
 }
