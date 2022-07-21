@@ -207,7 +207,11 @@ function editProduct()
         id: $code
     );
     $dao = new ProductDAO();
-    $result = $dao->update($product);
+    try {
+        $result = $dao->update($product);
+    } catch (PDOException $e) {
+        Redirect::redirect("Lamento, houve um erro inesperado!!!", type: 'error');
+    }
     if ($result) {
         Redirect::redirect(message: 'Produto atualizado com sucesso!!!');
     } else {

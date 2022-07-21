@@ -22,7 +22,7 @@
                 <a href="form_add_provider.php">Novo fornecedor</a>
             </li>
             <li class="inline">
-                <a href="#">Listar produtos</a>
+                <a href="../Controller/Product.php?operation=list">Listar produtos</a>
             </li>
         </ul>
     </nav>
