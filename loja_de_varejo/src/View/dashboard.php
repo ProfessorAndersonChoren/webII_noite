@@ -1,3 +1,4 @@
+<?php require_once '../Controller/auth.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,7 +23,10 @@
         <a href="form_add_provider.php">Novo fornecedor</a>
       </li>
       <li class="inline">
-        <a href="src/Controller/Product.php?operation=list">Listar produtos</a>
+        <a href="../Controller/Product.php?operation=list">Listar produtos</a>
+      </li>
+      <li class="inline">
+        <a href="../Controller/User.php?operation=logout">Sair</a>
       </li>
     </ul>
   </nav>
