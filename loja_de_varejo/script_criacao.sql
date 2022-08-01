@@ -19,9 +19,9 @@ CREATE SCHEMA IF NOT EXISTS `retail_store` DEFAULT CHARACTER SET utf8 ;
 USE `retail_store` ;
 
 -- -----------------------------------------------------
--- Table `retail_store`.`Address`
+-- Table `Address`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `retail_store`.`Address` (
+CREATE TABLE IF NOT EXISTS `Address` (
   `address_code` SMALLINT NOT NULL AUTO_INCREMENT,
   `public_place` VARCHAR(50) NOT NULL,
   `street_name` VARCHAR(40) NOT NULL,
@@ -35,9 +35,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `retail_store`.`Provider`
+-- Table `Provider`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `retail_store`.`Provider` (
+CREATE TABLE IF NOT EXISTS `Provider` (
   `provider_code` SMALLINT NOT NULL AUTO_INCREMENT,
   `cnpj` CHAR(18) NOT NULL,
   `provider_name` VARCHAR(50) NOT NULL,
@@ -48,16 +48,16 @@ CREATE TABLE IF NOT EXISTS `retail_store`.`Provider` (
   UNIQUE INDEX `cnpj_UNIQUE` (`cnpj` ASC) VISIBLE,
   CONSTRAINT `fk_Provider_Address`
     FOREIGN KEY (`address_code`)
-    REFERENCES `retail_store`.`Address` (`address_code`)
+    REFERENCES `Address` (`address_code`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `retail_store`.`Product`
+-- Table `Product`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `retail_store`.`Product` (
+CREATE TABLE IF NOT EXISTS `Product` (
   `product_code` SMALLINT NOT NULL AUTO_INCREMENT,
   `product_name` VARCHAR(45) NOT NULL,
   `product_price` DECIMAL(10,2) NOT NULL,
@@ -67,9 +67,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `retail_store`.`Provider_Product`
+-- Table `Provider_Product`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `retail_store`.`Provider_Product` (
+CREATE TABLE IF NOT EXISTS `Provider_Product` (
   `provider_code` SMALLINT NOT NULL,
   `product_code` SMALLINT NOT NULL,
   PRIMARY KEY (`provider_code`, `product_code`),
@@ -77,15 +77,22 @@ CREATE TABLE IF NOT EXISTS `retail_store`.`Provider_Product` (
   INDEX `fk_Provider_Product_Provider` (`provider_code` ASC) VISIBLE,
   CONSTRAINT `fk_Provider_has_Product_Provider1`
     FOREIGN KEY (`provider_code`)
-    REFERENCES `retail_store`.`Provider` (`provider_code`)
+    REFERENCES `Provider` (`provider_code`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Provider_has_Product_Product1`
     FOREIGN KEY (`product_code`)
-    REFERENCES `retail_store`.`Product` (`product_code`)
+    REFERENCES `Product` (`product_code`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+create table if not exists user(
+	user_id smallint primary key,
+    login varchar(30) not null,
+    password char(60) not null
+);
+insert into user values (1,'andersonchoren','$2y$10$wH1oAXYBTX3qRJfLGhDCOuYsiZNQBpwkbqYIGkAmZ/eYwd.r/dOGi');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
